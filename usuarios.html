@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuários</title>
+    <style>
+        /* Estilos CSS para a página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lista de Usuários</h1>
+    </header>
+    <div class="container">
+        <ul id="user-list">
+            <!-- Aqui os usuários serão listados dinamicamente pelo JavaScript -->
+        </ul>
+    </div>
+
+    <script>
+        // Função para fazer uma requisição à sua API e buscar a lista de usuários
+        async function fetchUserList() {
+            const token = localStorage.getItem('token');
+
+            if (!token) {
+                console.error('Token JWT não encontrado no Local Storage.');
+                return;
+            }
+
+            const apiUrl = 'http://localhost:2595/users';
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                const userList = document.getElementById('user-list');
+
+                data.forEach(user => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `ID: ${user.id}, Nome: ${user.name}, Email: ${user.email}, Senha: ${user.password}`;
+                    userList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Erro ao buscar a lista de usuários:', error);
+            }
+        }
+
+        // Chama a função para buscar a lista de usuários ao carregar a página
+        fetchUserList();
+    </script>
+</body>
+</html>
