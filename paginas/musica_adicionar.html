@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar música</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <i id="userIcon" class="fas fa-user"></i>
+        <ul id="optionsList">
+            <li><a href="user_listar.html">Usuários</a></li>
+            <li><a href="musica_listar.html">Músicas</a></li>
+            <li><a onclick="logoff()">Logoff</a></li>
+        </ul>
+    </header>
+
+    <div id="musicInfo">
+
+        <div class="music-container">
+            <h1>Adicionar música</h1>
+
+            <div id="msc-info">
+
+                <label for="trackName">Nome da música:</label>
+                <input type="text" id="trackName" placeholder="string">
+
+                <label for="artistName">Nome do artista:</label>
+                <input type="text" id="artistName" placeholder="string">
+
+                <label for="artistCount">Contagem do artista:</label>
+                <input type="text" id="artistCount" placeholder="integer">
+
+                <label for="releasedDay">Dia de lançamento:</label>
+                <input type="text" id="releasedDay" placeholder="integer">
+
+                <label for="releasedMonth">Mês de lançamento:</label>
+                <input type="text" id="releasedMonth" placeholder="integer">
+
+                <label for="releasedYear">Ano de lançamento:</label>
+                <input type="text" id="releasedYear" placeholder="integer">
+
+                <label for="inSpotifyPlaylists">Em playlist do Spotify:</label>
+                <input type="text" id="inSpotifyPlaylists" placeholder="integer">
+
+                <label for="inSpotifyCharts">Em charts do Spotify:</label>
+                <input type="text" id="inSpotifyCharts" placeholder="integer">
+
+                <label for="streams">Streams:</label>
+                <input type="text" id="streams" placeholder="integer">
+
+                <label for="inApplePlaylists">Em playlist da ApplePlay:</label>
+                <input type="text" id="inApplePlaylists" placeholder="integer">
+
+                <label for="inAppleCharts">Em charts da Apple:</label>
+                <input type="text" id="inAppleCharts" placeholder="integer">
+
+                <label for="inDeezerPlaylists">Em playlist do Deezer:</label>
+                <input type="text" id="inDeezerPlaylists" placeholder="integer">
+
+                <label for="inDeezerCharts">Em charts do Deezer:</label>
+                <input type="text" id="inDeezerCharts" placeholder="integer">
+
+                <label for="inShazamCharts">Em charts do Shazam:</label>
+                <input type="text" id="inShazamCharts" placeholder="integer">
+
+                <label for="bpm">BPM:</label>
+                <input type="text" id="bpm" placeholder="integer">
+
+                <label for="key">Chave:</label>
+                <input type="text" id="key" placeholder="string">
+
+                <label for="mode">Modo:</label>
+                <input type="text" id="mode" placeholder="string">
+
+                <label for="danceability">Dançabilidade:</label>
+                <input type="text" id="danceability" placeholder="integer">
+
+                <label for="valence">Valência:</label>
+                <input type="text" id="valence" placeholder="integer">
+
+                <label for="energy">Energia:</label>
+                <input type="text" id="energy" placeholder="integer">
+
+                <label for="acousticness">Acusticidade:</label>
+                <input type="text" id="acousticness" placeholder="integer">
+
+                <label for="instrumentalness">Instrumentalidade:</label>
+                <input type="text" id="instrumentalness" placeholder="integer">
+
+                <label for="liveness">Vivacidade:</label>
+                <input type="text" id="liveness" placeholder="integer">
+
+                <label for="speechiness">Fala:</label>
+                <input type="text" id="speechiness" placeholder="integer">
+            </div>
+
+            <i id="btnVoltar" class="fa-solid fa-arrow-left"></i>
+
+            <div class="div-btns">
+                <button id="btnAddMsc">Adicionar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="https://kit.fontawesome.com/1ef87b5e1c.js" crossorigin="anonymous"></script>
+</body>
+</html>

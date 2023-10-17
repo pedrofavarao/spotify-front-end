@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar música</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body onload="abrirMusica()">
+    <header>
+        <i id="userIcon" class="fas fa-user"></i>
+        <ul id="optionsList">
+            <li><a href="user_listar.html">Usuários</a></li>
+            <li><a href="musica_listar.html">Músicas</a></li>
+            <li><a onclick="logoff()">Logoff</a></li>
+        </ul>
+    </header>
+
+    <div id="musicInfo">
+
+        <div class="music-container">
+            <h1>Editar música</h1>
+
+            <div id="msc-info">
+                <label for="id">ID:</label>
+                <input type="text" id="id" disabled="">
+
+                <label for="trackName">Nome da música:</label>
+                <input type="text" id="trackName">
+
+                <label for="artistName">Nome do artista:</label>
+                <input type="text" id="artistName">
+
+                <label for="artistCount">Contagem do artista:</label>
+                <input type="text" id="artistCount">
+
+                <label for="releasedDay">Dia de lançamento:</label>
+                <input type="text" id="releasedDay">
+
+                <label for="releasedMonth">Mês de lançamento:</label>
+                <input type="text" id="releasedMonth">
+
+                <label for="releasedYear">Ano de lançamento:</label>
+                <input type="text" id="releasedYear">
+
+                <label for="inSpotifyPlaylists">Em playlist do Spotify:</label>
+                <input type="text" id="inSpotifyPlaylists">
+
+                <label for="inSpotifyCharts">Em charts do Spotify:</label>
+                <input type="text" id="inSpotifyCharts">
+
+                <label for="streams">Streams:</label>
+                <input type="text" id="streams">
+
+                <label for="inApplePlaylists">Em playlist da ApplePlay:</label>
+                <input type="text" id="inApplePlaylists">
+
+                <label for="inAppleCharts">Em charts da Apple:</label>
+                <input type="text" id="inAppleCharts">
+
+                <label for="inDeezerPlaylists">Em playlist do Deezer:</label>
+                <input type="text" id="inDeezerPlaylists">
+
+                <label for="inDeezerCharts">Em charts do Deezer:</label>
+                <input type="text" id="inDeezerCharts">
+
+                <label for="inShazamCharts">Em charts do Shazam:</label>
+                <input type="text" id="inShazamCharts">
+
+                <label for="bpm">BPM:</label>
+                <input type="text" id="bpm">
+
+                <label for="key">Chave:</label>
+                <input type="text" id="key">
+
+                <label for="mode">Modo:</label>
+                <input type="text" id="mode">
+
+                <label for="danceability">Dançabilidade:</label>
+                <input type="text" id="danceability">
+
+                <label for="valence">Valência:</label>
+                <input type="text" id="valence">
+
+                <label for="energy">Energia:</label>
+                <input type="text" id="energy">
+
+                <label for="acousticness">Acusticidade:</label>
+                <input type="text" id="acousticness">
+
+                <label for="instrumentalness">Instrumentalidade:</label>
+                <input type="text" id="instrumentalness">
+
+                <label for="liveness">Vivacidade:</label>
+                <input type="text" id="liveness">
+
+                <label for="speechiness">Fala:</label>
+                <input type="text" id="speechiness">
+            </div>
+
+            <i id="btnVoltar" class="fa-solid fa-arrow-left"></i>
+
+            <div class="div-btns">
+                <button id="btnDelMsc">Excluir</button>
+                <button id="btnEditarMsc">Salvar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="https://kit.fontawesome.com/1ef87b5e1c.js" crossorigin="anonymous"></script>
+</body>
+</html>

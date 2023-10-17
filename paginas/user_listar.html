@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar usuários</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body onload="listarUsuarios()">
+    <header>
+        <i id="userIcon" class="fas fa-user"></i>
+        <ul id="optionsList">
+            <li><a href="user_listar.html">Usuários</a></li>
+            <li><a href="musica_listar.html">Músicas</a></li>
+            <li><a onclick="logoff()">Logoff</a></li>
+        </ul>
+    </header>
+
+    <div id="container-user">
+
+    </div>
+
+    <div id="addUser">
+        <i class="fa-regular fa-plus fa-bounce"></i>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="https://kit.fontawesome.com/1ef87b5e1c.js" crossorigin="anonymous"></script>
+</body>
+</html>

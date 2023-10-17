@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar usuário</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body onload="abrirUsuario()">
+    <header>
+        <i id="userIcon" class="fas fa-user"></i>
+        <ul id="optionsList">
+            <li><a href="user_listar.html">Usuários</a></li>
+            <li><a href="musica_listar.html">Músicas</a></li>
+            <li><a onclick="logoff()">Logoff</a></li>
+        </ul>
+    </header>
+
+    <div id="musicInfo">
+
+        <div class="music-container">
+            <h1>Editar usuário</h1>
+
+            <div id="msc-info">
+                <label for="id">ID:</label>
+                <input type="text" id="id" disabled="">
+
+                <label for="name">Nome:</label>
+                <input type="text" id="name">
+
+                <label for="email">E-mail:</label>
+                <input type="text" id="email">
+
+                <label for="password">Senha:</label>
+                <input type="text" id="password">
+
+                <label for="username">Username:</label>
+                <input type="text" id="username">
+
+                <label for="authorities">Autoridades:</label>
+                <input type="text" id="authorities" disabled="">
+
+                <div class="checkboxs">
+                    <label for="enabled">Ativo:</label>
+                    <input type="checkbox" id="enabled">
+                </div>
+
+                <div class="checkboxs">
+                    <label for="accountNonExpired">Conta não expira:</label>
+                    <input type="checkbox" id="accountNonExpired">
+                </div>
+
+                <div class="checkboxs">
+                    <label for="accountNonLocked">Conta não bloqueada:</label>
+                    <input type="checkbox" id="accountNonLocked">
+                </div>
+
+                <div class="checkboxs">
+                    <label for="credentialsNonExpired">Credenciais não expiram:</label>
+                    <input type="checkbox" id="credentialsNonExpired">
+                </div>
+            </div>
+
+            <i id="btnVoltarUser" class="fa-solid fa-arrow-left"></i>
+
+            <div class="div-btns">
+                <button id="btnEditarUser">Salvar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="https://kit.fontawesome.com/1ef87b5e1c.js" crossorigin="anonymous"></script>
+</body>
+</html>

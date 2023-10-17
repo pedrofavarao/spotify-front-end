@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Editar Nome de Usuário</h1>
+    <form id="edit-form">
+      <label for="name">Novo Nome:</label>
+      <input type="text" id="name" name="name">
+      <button type="submit">Salvar</button>
+    </form>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const editForm = document.getElementById("edit-form");
+      editForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+
+        // Obtenha o token do Local Storage
+        const token = localStorage.getItem("token");
+
+        // Obtenha o ID do usuário do JWT (assumindo que o token é um JWT)
+        const jwtPayload = JSON.parse(atob(token.split(".")[1]));
+        const userId = jwtPayload.sub;
+
+        // Construa o corpo da solicitação
+        const requestBody = JSON.stringify({ name });
+
+        // Faça uma solicitação para a API
+        fetch(`http://localhost:2595/users/${userId}`, {
+          method: "PATCH",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          body: requestBody,
+        })
+        .then(response => {
+          if (response.ok) {
+            // Exiba um alerta de sucesso
+            alert("Nome alterado com sucesso!");
+          } else {
+            console.error("Erro ao atualizar o nome.");
+          }
+        })
+        .catch(error => {
+          console.error("Erro na solicitação:", error);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
